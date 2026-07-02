@@ -24,10 +24,6 @@ The application manages data client-side using a clean object architecture:
     "completed": false
   }
 ]
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
 
-npm install
-
-npm run dev
 
 
