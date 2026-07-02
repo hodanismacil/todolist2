@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# Taskify – Minimalist Task Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Taskify is a clean, minimalist, and highly intuitive To-Do application built to showcase modern frontend development practices. It focuses on exceptional UI/UX, responsive layouts, and efficient client-side data persistence.
 
-Currently, two official plugins are available:
+## ✨ Features
+- **Dark Mode Aesthetic:** A beautifully crafted, eye-friendly minimalist dark interface.
+- **Data Persistence:** Uses browser `LocalStorage` to ensure user tasks are saved and never lost upon page refreshes.
+- **Dynamic State Management:** Seamlessly handle adding and deleting tasks with real-time UI updates.
+- **Robust Data Structure:** Tasks are managed using a structured JSON array with uniquely generated IDs for safe rendering and filtering.
+- **Fully Responsive:** Perfectly optimized for mobile, tablet, and desktop screens.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **Framework:** React (with TypeScript for type safety)
+- **Styling:** Tailwind CSS (Clean & Minimalist design principles)
+- **State & Storage:** React Hooks (`useState`, `useEffect`) & Web Storage API (`localStorage`)
 
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
+## 📦 Data Structure Example
+The application manages data client-side using a clean object architecture:
+```json
+[
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    "id": 1782960799107,
+    "text": "waxan rabaa inan shaqoyin badan qabto manata",
+    "completed": false
+  }
+]
+git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
